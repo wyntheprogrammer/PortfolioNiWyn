@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Poppins';
+}
+
+/* Scrollbar styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #222;
+  border-radius: 9999px;
+}
+
+
+/* animation swipe */
+.hidden-animate-swipe {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show-animate-swipe {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+
+
+/* animation fade */
+.hidden-animate-fade {
+  opacity: 0;
+  transition: all 2s;
+}
+
+.show-animate-fade {
+  opacity: 1;
+}
+
+
+/* animation stagger */
+/* .stag {
+  display: flex;
+}
+
+.stag:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.stag:nth-child(3) {
+  transition-delay: 400ms;
+}
+
+.stag:nth-child(4) {
+  transition-delay: 600ms;
+} */
+
+.stag {
+  opacity: 0;
+  animation: fadeIn 1s ease both;
+  animation-delay: var(--delay, 0ms);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+.bg-custom-gradient-5 {
+  background: #020024;
+  background: linear-gradient(344deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 44%, rgba(0, 134, 161, 1) 100%);
+}
+
+.bg-custom-gradient-4 {
+  background: #020024;
+  background: linear-gradient(178deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 44%, rgba(0, 134, 161, 1) 100%);
+}
+
+.bg-custom-gradient-3 {
+  background: #020024;
+  background: -webkit-linear-gradient(1deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 44%, rgba(0, 134, 161, 1) 100%);
+  background: -moz-linear-gradient(1deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 44%, rgba(0, 134, 161, 1) 100%);
+  background: linear-gradient(1deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 44%, rgba(0, 134, 161, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#0086A1", GradientType=0);
+}
