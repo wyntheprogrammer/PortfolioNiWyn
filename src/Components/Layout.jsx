@@ -8,9 +8,8 @@ import Accomplishment from './Accomplishment/Accomplishment';
 import Project from './Project/Project';
 import Contact from './Contact/Contact';
 import Footer from './Footer/Footer';
-import Music from './Music';
 
-const Layout = () => {
+const Layout = ({ togglePlay, isPlaying }) => {
     const aboutRef = useRef(null);
     const accomplishmentRef = useRef(null);
     const projectsRef = useRef(null);
@@ -79,14 +78,13 @@ const Layout = () => {
 
     return (
         <div className="h-screen bg-black flex flex-col">
-            <Music />
-            <Navbar onScrollTo={scrollHandlers} />
+            <Navbar onScrollTo={scrollHandlers}  togglePlay={togglePlay} isPlaying={isPlaying} />
             <div
                 ref={scrollContainerRef}
-                className={`flex-1 overflow-y-scroll custom-scrollbar ${location.pathname === '/' ? 'snap-y snap-mandatory' : ''
+                className={`flex-1 overflow-y-scroll custom-scrollbar ${location.pathname === '/home' ? 'snap-y snap-mandatory' : ''
                     }`}
             >
-                {location.pathname === '/' && (
+                {location.pathname === '/home' && (
                     <>
                         <Hero />
                         <section ref={aboutRef}><About /></section>

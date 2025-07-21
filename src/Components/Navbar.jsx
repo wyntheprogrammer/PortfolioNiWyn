@@ -3,23 +3,33 @@ import ShLogo from '../assets/sh-logo.png'
 
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const Navbar = ({ onScrollTo }) => {
+const Navbar = ({ onScrollTo, togglePlay, isPlaying }) => {
 
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleClick = (section) => {
     if (location.pathname !== '/') {
-      navigate('/', { state: { scrollTo: section } });
+      navigate('/home', { state: { scrollTo: section } });
     } else {
       onScrollTo[section]();
     }
   };
 
+  const handleLogoClick = () => {
+    if (isPlaying) togglePlay(); // pause the music
+    navigate('/');
+  };
+
   return (
     <div className="flex justify-between  bg-black h-20 items-center px-10 sticky  top-0 z-50 hidden-animate-fade">
       <div className="h-full w-auto">
-        <img src={ShLogo} alt="Logo" className="h-full object-contain" />
+        <img
+          src={ShLogo}
+          alt="Logo"
+          className="h-full object-contain cursor-pointer"
+          onClick={handleLogoClick}
+        />
       </div>
       <ul className="flex flex-row gap-10 text-white">
         <li className="hover:text-[#63C5DA] cursor-pointer hover:scale-110 transition-transform duration-300" onClick={() => handleClick('home')}>Home</li>

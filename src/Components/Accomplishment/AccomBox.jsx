@@ -11,7 +11,7 @@ const AccomBox = ({ src, alt, title, description, images, style }) => {
   const navigate = useNavigate();
 
   const handleViewClick = () => {
-    navigate('/certlayout', {
+    navigate('certlayout', {
       state: { title, description, images }
     }); 
   };

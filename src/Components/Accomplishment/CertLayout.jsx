@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Outlet } from 'react-router-dom';
 
 import compcert from '../../assets/compcert.jpg';
 
@@ -9,7 +9,7 @@ const CertLayout = () => {
   const { title, description, images = [] } = location.state || {};
 
   const handleImageClick = (index) => {
-    navigate('/certview', {
+    navigate('/home/certview', {
       state: {
         images,
         currentIndex: index,
@@ -45,6 +45,9 @@ const CertLayout = () => {
           ))}
         </div>
       </div>
+
+      {/* ✅ This renders nested route (CertView) */}
+      <Outlet />
     </div>
   );
 };
