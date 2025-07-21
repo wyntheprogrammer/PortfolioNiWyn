@@ -1,4 +1,4 @@
-import React, { useEffect }  from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Layout from './Components/Layout';
@@ -6,7 +6,6 @@ import CertLayout from './Components/Accomplishment/CertLayout';
 import CertView from './Components/Accomplishment/CertView';
 
 const App = () => {
-
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -21,12 +20,11 @@ const App = () => {
     const hiddenElements = document.querySelectorAll('.hidden-animate-swipe, .hidden-animate-fade');
     hiddenElements.forEach((el) => observer.observe(el));
 
-    // Optional cleanup
     return () => observer.disconnect();
   }, []);
 
   return (
-    <Router>
+    <Router basename="/PortfolioNiWyn/">
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<div />} />
