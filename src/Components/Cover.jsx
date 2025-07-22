@@ -32,14 +32,14 @@ export const Cover = ({ onStart }) => {
         <h1 className="text-white text-8xl font-extrabold tracking-tight drop-shadow-xl animate-fade-in-up">
           PORTFOLIO NI WYN
         </h1>
-        <p className="mt-4 text-white text-2xl font-medium max-w-2xl drop-shadow-md animate-fade-in-up delay-200">
+        <p className="mt-4 text-white text-center text-2xl font-medium max-w-2xl drop-shadow-md animate-fade-in-up delay-200">
           Hustle. Grind. Create. Witness the journey of a visionary through code, design, and passion.
         </p>
         <button
           onClick={handleStart}
           className="mt-10 px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-300 transition-all animate-fade-in-up delay-500"
         >
-          Start the Journey 🚀
+          Start the Journey ❤️‍🔥
         </button>
 
       </div>

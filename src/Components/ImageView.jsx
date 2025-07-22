@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import max from '../../assets/maximize.png'
-import min from '../../assets/minimize.png'
-import prev from '../../assets/left-arrow.png'
-import next from '../../assets/right-arrow.png'
-import close from '../../assets/close.png'
-import { div, img } from 'framer-motion/client';
+import max from '../assets/maximize.png'
+import min from '../assets/minimize.png'
+import prev from '../assets/left-arrow.png'
+import next from '../assets/right-arrow.png'
+import close from '../assets/close.png'
 
+import { div, img } from 'framer-motion/client';
 
 
 const CertView = () => {
@@ -53,6 +53,7 @@ const CertView = () => {
     return (
         <div ref={viewerRef} className='flex flex-col items-center text-white p-10 min-h-screen bg-black'>
             <div className="flex justify-between w-full hidden-animate-fade">
+
                 <button onClick={handleFullscreen}>
 
                     {isFullscreen ?
@@ -65,7 +66,7 @@ const CertView = () => {
                             />
                         </div>
 
-                        : 
+                        :
 
                         <div className='w-8 h-8'>
                             <img
@@ -76,19 +77,20 @@ const CertView = () => {
                         </div>
                     }
                 </button>
+
                 <button onClick={() => navigate(-1)}>
                     <div className='w-6 h-6'>
-                            <img
-                                src={close}
-                                alt="Close"
-                                className="w-full h-full"
-                            />
-                        </div>
+                        <img
+                            src={close}
+                            alt="Close"
+                            className="w-full h-full"
+                        />
+                    </div>
                 </button>
             </div>
 
-            <div className="flex flex-row items-center justify-between gap-10 w-full hidden-animate-fade">
-                
+            <div className="flex flex-row items-center justify-center justify-between gap-10 w-full  min-h-screen hidden-animate-fade">
+
                 {index > 0 ? (
                     <button onClick={goPrev}>
                         <div className='w-8 h-8'>
@@ -103,11 +105,14 @@ const CertView = () => {
                     <div className="w-[60px]" />
                 )}
 
-                <img
-                    src={images[index]}
-                    alt={`Certificate ${index + 1}`}
-                    className="max-h-[80vh] rounded-lg border"
-                />
+                <div className='w-5/6'>
+                    <img
+                        src={images[index]}
+                        alt={`Certificate ${index + 1}`}
+                        className="w-full rounded-lg border"
+                    />
+
+                </div>
 
                 {index < images.length - 1 ? (
                     <button onClick={goNext}>

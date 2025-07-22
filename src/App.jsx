@@ -3,18 +3,18 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 
 import Layout from './Components/Layout';
 import CertLayout from './Components/Accomplishment/CertLayout';
-import CertView from './Components/Accomplishment/CertView';
+import ImageView from './Components/ImageView';
 import { Cover } from './Components/Cover';
 
 import Music from './Components/Music';
 import musicFile from './assets/change_the_world.mp3';
+import ProjectLayout from './Components/Project/ProjectLayout';
 
 const AppRoutes = ({ togglePlay, isPlaying }) => {
   const location = useLocation();
 
   return (
     <>
-      {/* Show Music component only if NOT on the cover page (path !== "/") */}
       {location.pathname !== '/' && (
         <Music togglePlay={togglePlay} isPlaying={isPlaying} />
       )}
@@ -22,7 +22,8 @@ const AppRoutes = ({ togglePlay, isPlaying }) => {
         <Route path="/" element={<Cover onStart={togglePlay} />} />
         <Route path="/home" element={<Layout togglePlay={togglePlay} isPlaying={isPlaying} />}>
           <Route path="certlayout" element={<CertLayout />} />
-          <Route path="certview" element={<CertView />} />
+          <Route path="imageview" element={<ImageView />} />
+          <Route path="projlayout" element={<ProjectLayout />} />
         </Route>
       </Routes>
     </>

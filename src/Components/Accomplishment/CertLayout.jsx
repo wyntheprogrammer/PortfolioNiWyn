@@ -9,7 +9,7 @@ const CertLayout = () => {
   const { title, description, images = [] } = location.state || {};
 
   const handleImageClick = (index) => {
-    navigate('/home/certview', {
+    navigate('/home/imageview', {
       state: {
         images,
         currentIndex: index,
