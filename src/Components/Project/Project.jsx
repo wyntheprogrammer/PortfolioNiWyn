@@ -3,6 +3,9 @@ import lms from '../../assets/lms.png'
 import bms from '../../assets/bms.png'
 import gms from '../../assets/gms.png'
 
+import n1 from '../../assets/Project/NuevoLink/Website/n1.jpeg';
+import n2 from '../../assets/Project/NuevoLink/Website/n2.jpeg';
+
 import g1 from '../../assets/Project/G/g1.png';
 import g2 from '../../assets/Project/G/g2.png';
 import g3 from '../../assets/Project/G/g3.png';
@@ -48,6 +51,25 @@ const Project = () => {
                     alt="BMS"
                     title="NuevoLink"
                     description="A barangay website for Barangay Nuevo, Makati City, developed using CodeIgniter, PHP, and MySQL to manage records, provide announcements, and facilitate resident services. Created during my third-year project at University of Makati (UMAK) in 2023, it was a challenging experience as it was my first major project for a barangay, accommodating both residents and barangay officials."
+                    features={[
+                        "User Authentication & Role Management: Secure login system for admins and staff with role-based access control.",
+                        "Input Validation: Ensures user input is correct and meets defined rules for accuracy.",
+                        "Member & Staff Management (CRUD): Manage creation, updates, and deletion of member, coach, and staff records.",
+                        "Search & Filtering: Locate member, coach, staff, profiles and payments.",
+                        "Data Analytics: Visual summaries of monthly income for members and non-members.",
+                        "Report Generation: Creates summary reports for daily, weekly, monthly, and yearly income, as well as total counts of staff, coaches, members (active and inactive), and non-members.",
+                        "Print Support: Allows printing of organized lists such as members, coaches, staff, and payment records in a clean, print-ready format.",
+                    ]}
+                    tools={[
+                        "HTML",
+                        "CSS",
+                        "JavaScript",
+                        "PHP",
+                        "MySQL",
+                    ]}
+                    images={[
+                        n1, n2,
+                    ]}
                     style={{ "--delay": "600ms" }} />
                 <ProjectBox
                     src={gms}
@@ -67,6 +89,7 @@ const Project = () => {
                         "HTML",
                         "CSS",
                         "JavaScript",
+                        "PHP",
                         "MySQL",
                     ]}
                     images={[
