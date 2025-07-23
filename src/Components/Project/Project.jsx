@@ -3,8 +3,69 @@ import lms from '../../assets/lms.png'
 import bms from '../../assets/bms.png'
 import gms from '../../assets/gms.png'
 
-import n1 from '../../assets/Project/NuevoLink/Website/n1.jpeg';
-import n2 from '../../assets/Project/NuevoLink/Website/n2.jpeg';
+import nw1 from '../../assets/Project/NuevoLink/Website/n1.jpeg';
+import nw2 from '../../assets/Project/NuevoLink/Website/n2.jpeg';
+import nw3 from '../../assets/Project/NuevoLink/Website/n3.jpeg';
+import nw4 from '../../assets/Project/NuevoLink/Website/n4.jpeg';
+import nw5 from '../../assets/Project/NuevoLink/Website/n5.jpeg';
+import nw6 from '../../assets/Project/NuevoLink/Website/n6.jpeg';
+import nw7 from '../../assets/Project/NuevoLink/Website/n7.jpeg';
+import nw8_0 from '../../assets/Project/NuevoLink/Website/n8.0.jpeg';
+import nw8_1 from '../../assets/Project/NuevoLink/Website/n8.1.jpeg';
+import nw8_2 from '../../assets/Project/NuevoLink/Website/n8.2.jpeg';
+import nw8_3 from '../../assets/Project/NuevoLink/Website/n8.3.jpeg';
+import nw8_4 from '../../assets/Project/NuevoLink/Website/n8.4.jpeg';
+import nw9_0 from '../../assets/Project/NuevoLink/Website/n9.0.jpeg';
+import nw9_1 from '../../assets/Project/NuevoLink/Website/n9.1.jpeg';
+import nw9_2 from '../../assets/Project/NuevoLink/Website/n9.2.jpeg';
+import nw10_0 from '../../assets/Project/NuevoLink/Website/n10.0.jpeg';
+import nw10_1 from '../../assets/Project/NuevoLink/Website/n10.1.jpeg';
+import nw11_0 from '../../assets/Project/NuevoLink/Website/n11.0.jpeg';
+import nw11_1 from '../../assets/Project/NuevoLink/Website/n11.1.jpeg';
+
+
+import na1 from '../../assets/Project/NuevoLink/Admin/n1.jpeg';
+import na2_0 from '../../assets/Project/NuevoLink/Admin/n2.0.png';
+import na2_1 from '../../assets/Project/NuevoLink/Admin/n2.1.png';
+import na2_2 from '../../assets/Project/NuevoLink/Admin/n2.2.png';
+import na2_3 from '../../assets/Project/NuevoLink/Admin/n2.3.png';
+import na3_0 from '../../assets/Project/NuevoLink/Admin/n3.0.png';
+import na3_1 from '../../assets/Project/NuevoLink/Admin/n3.1.png';
+import na3_2 from '../../assets/Project/NuevoLink/Admin/n3.2.png';
+import na4_0 from '../../assets/Project/NuevoLink/Admin/n4.0.png';
+import na4_1 from '../../assets/Project/NuevoLink/Admin/n4.1.png';
+import na5_0 from '../../assets/Project/NuevoLink/Admin/n5.0.png';
+import na5_1 from '../../assets/Project/NuevoLink/Admin/n5.1.png';
+import na6_0 from '../../assets/Project/NuevoLink/Admin/n6.0.png';
+import na6_1 from '../../assets/Project/NuevoLink/Admin/n6.1.png';
+import na7_0 from '../../assets/Project/NuevoLink/Admin/n7.0.png';
+import na7_1 from '../../assets/Project/NuevoLink/Admin/n7.1.png';
+import na7_2 from '../../assets/Project/NuevoLink/Admin/n7.2.png';
+import na8_0 from '../../assets/Project/NuevoLink/Admin/n8.0.png';
+import na8_1 from '../../assets/Project/NuevoLink/Admin/n8.1.png';  
+import na8_2 from '../../assets/Project/NuevoLink/Admin/n8.2.png';   
+import na9_0 from '../../assets/Project/NuevoLink/Admin/n9.0.png';
+import na9_1 from '../../assets/Project/NuevoLink/Admin/n9.1.png';
+import na10 from '../../assets/Project/NuevoLink/Admin/n10.png';
+import na11 from '../../assets/Project/NuevoLink/Admin/n11.png';
+import na12 from '../../assets/Project/NuevoLink/Admin/n12.png';
+import na13_0 from '../../assets/Project/NuevoLink/Admin/n13.0.png';
+import na13_1 from '../../assets/Project/NuevoLink/Admin/n13.1.png';
+import na14_0 from '../../assets/Project/NuevoLink/Admin/n14.0.png';
+import na14_1 from '../../assets/Project/NuevoLink/Admin/n14.1.png';
+import na15_0 from '../../assets/Project/NuevoLink/Admin/n15.0.png';
+import na15_1 from '../../assets/Project/NuevoLink/Admin/n15.1.png';
+import na16 from '../../assets/Project/NuevoLink/Admin/n16.png';
+
+
+
+
+
+
+
+
+
+
 
 import g1 from '../../assets/Project/G/g1.png';
 import g2 from '../../assets/Project/G/g2.png';
@@ -68,7 +129,16 @@ const Project = () => {
                         "MySQL",
                     ]}
                     images={[
-                        n1, n2,
+                        nw1, nw2, nw3, nw4, nw5, nw6, nw7,
+                        nw8_0, nw8_1, nw8_2, nw8_3, nw8_4,
+                        nw9_0, nw9_1, nw9_2, nw10_0, nw10_1,
+                        nw11_0, nw11_1, na1, na2_0, na2_1,
+                        na2_2, na2_3, na3_0, na3_1, na3_2,
+                        na4_0, na4_1, na5_0, na5_1, na6_0,
+                        na6_1, na7_0, na7_1, na7_2, na8_0,
+                        na8_1, na8_2, na9_0, na9_1, na10,
+                        na11, na12, na13_0, na13_1, na14_0,
+                        na14_1, na15_0, na15_1, na16     
                     ]}
                     style={{ "--delay": "600ms" }} />
                 <ProjectBox

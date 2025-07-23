@@ -40,19 +40,55 @@ const CertView = () => {
 
     // Listen to fullscreen changes
     useEffect(() => {
-        const handleFullscreenChange = () => {
-            setIsFullscreen(!!document.fullscreenElement);
+    const handleFullscreenChange = () => {
+        setIsFullscreen(!!document.fullscreenElement);
+
+        // Trigger recenter check
+        setTimeout(() => {
+            if (imageRef.current) {
+                const imageHeight = imageRef.current.naturalHeight * (imageRef.current.clientWidth / imageRef.current.naturalWidth);
+                setIsCentered(imageHeight < (window.innerHeight - 200));
+            }
+        }, 300); // delay to allow layout update
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+        document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+}, []);
+
+
+
+
+
+    const imageRef = useRef(null);
+    const containerHeight = window.innerHeight - 200;
+    const [isCentered, setIsCentered] = useState(true);
+
+    useEffect(() => {
+        const handleLoad = () => {
+            if (imageRef.current) {
+                const imageHeight = imageRef.current.naturalHeight * (imageRef.current.clientWidth / imageRef.current.naturalWidth);
+                setIsCentered(imageHeight < containerHeight);
+            }
         };
 
-        document.addEventListener('fullscreenchange', handleFullscreenChange);
-        return () => {
-            document.removeEventListener('fullscreenchange', handleFullscreenChange);
-        };
-    }, []);
+        const img = imageRef.current;
+        if (img?.complete) {
+            handleLoad();
+        } else {
+            img?.addEventListener('load', handleLoad);
+            return () => img?.removeEventListener('load', handleLoad);
+        }
+    }, [index]);
+
+
 
     return (
-        <div ref={viewerRef} className='flex flex-col items-center text-white p-10 min-h-screen bg-black'>
-            <div className="flex justify-between w-full hidden-animate-fade">
+        <div ref={viewerRef} className='flex flex-col text-white p-10 gap-5 bg-black '>
+
+            <div className="flex justify-between items-start w-full hidden-animate-fade">
 
                 <button onClick={handleFullscreen}>
 
@@ -89,7 +125,7 @@ const CertView = () => {
                 </button>
             </div>
 
-            <div className="flex flex-row items-center justify-center justify-between gap-10 w-full  min-h-screen hidden-animate-fade">
+            <div className="flex flex-row justify-between items-center gap-10 w-full h-full hidden-animate-fade ">
 
                 {index > 0 ? (
                     <button onClick={goPrev}>
@@ -105,14 +141,14 @@ const CertView = () => {
                     <div className="w-[60px]" />
                 )}
 
-                <div className='w-5/6'>
-                    <img
-                        src={images[index]}
-                        alt={`Certificate ${index + 1}`}
-                        className="w-full rounded-lg border"
-                    />
-
-                </div>
+                 <div className={`w-5/6 h-[calc(100vh-200px)] flex overflow-y-auto custom-scrollbar ${isCentered ? 'items-center' : 'items-start'}`}>
+      <img
+        ref={imageRef}
+        src={images[index]}
+        alt={`Image ${index + 1}`}
+        className="w-full rounded-lg border"
+      />
+    </div>
 
                 {index < images.length - 1 ? (
                     <button onClick={goNext}>

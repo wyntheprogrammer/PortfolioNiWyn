@@ -51,19 +51,23 @@ const ProjectLayout = () => {
 
 
 
-            <div className='w-4/6'>
-                <div className="grid grid-cols-2 gap-5 p-10 w-full">
+            <div className="w-4/6 p-10">
+                <div className="columns-3 gap-5">
                     {images.map((img, index) => (
                         <img
                             key={index}
                             src={img}
                             alt={`Project ${images.length - index}`}
                             onClick={() => handleImageClick(index)}
-                            className="mb-5 rounded-lg border border-gray-500 break-inside-avoid hidden-animate-fade cursor-pointer transition-transform duration-200 hover:scale-105"
+                            className="mb-5 rounded-lg border border-gray-500 break-inside-avoid cursor-pointer transition-transform duration-200 hover:scale-105 w-full"
                         />
                     ))}
                 </div>
             </div>
+
+
+
+
 
             {/* ✅ This renders nested route (ImageView) */}
             <Outlet />
