@@ -8,9 +8,12 @@ import { Cover } from './Components/Cover';
 
 import Music from './Components/Music';
 import musicFile from './assets/change_the_world.mp3';
+
+import ProjectMore from './Components/Project/ProjectMore';
 import ProjectLayout from './Components/Project/ProjectLayout';
 
 const AppRoutes = ({ togglePlay, isPlaying }) => {
+
   const location = useLocation();
 
   return (
@@ -23,6 +26,7 @@ const AppRoutes = ({ togglePlay, isPlaying }) => {
         <Route path="/home" element={<Layout togglePlay={togglePlay} isPlaying={isPlaying} />}>
           <Route path="certlayout" element={<CertLayout />} />
           <Route path="imageview" element={<ImageView />} />
+          <Route path="projmore" element={<ProjectMore />} />
           <Route path="projlayout" element={<ProjectLayout />} />
         </Route>
       </Routes>
@@ -79,7 +83,7 @@ const App = () => {
     </Router>
   );
 
-  
+
 };
 
 export default App;

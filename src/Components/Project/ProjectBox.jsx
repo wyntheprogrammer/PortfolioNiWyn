@@ -13,7 +13,7 @@ const ProjectBox = ({ src, alt, title, description, features, tools, images, sty
     const navigate = useNavigate();
 
     const handleViewClick = () => {
-        navigate('projlayout', {
+        navigate('/home/projlayout', {
             state: { title, description, features, tools, images }
         });
     };

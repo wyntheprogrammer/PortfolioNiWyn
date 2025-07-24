@@ -1,4 +1,6 @@
 import React from 'react'
+
+
 import { useNavigate } from 'react-router-dom'
 
 
@@ -234,14 +236,15 @@ import g11_4 from '../../assets/Project/G/g11.4.png';
 import g11_5 from '../../assets/Project/G/g11.5.png';
 
 
+
+
 import ProjectBox from './ProjectBox'
 
 
-const Project = () => {
-    const navigate = useNavigate();
+const ProjectMore = () => {
 
     return (
-        <div className='snap-start flex flex-col justify-center items-center gap-10 text-white my-10 h-[calc(100vh-5rem)] snap-start'>
+        <div className='snap-start flex flex-col justify-center gap-10 text-white  h-[calc(100vh-5rem)] snap-start'>
 
             <span className='text-5xl text-white text-center block hidden-animate-fade'>Projects</span>
 
@@ -350,12 +353,8 @@ const Project = () => {
 
             </div>
 
-
-            <button className='rounded-sm border border-[#3b82f6] w-max py-2 px-10 font-bold cursor-pointer hover:scale-110 transition-transform duration-300 hidden-animate-fade' onClick={() => navigate('projmore')}>View more</button>
-
         </div>
-
     )
 }
 
-export default Project
+export default ProjectMore
