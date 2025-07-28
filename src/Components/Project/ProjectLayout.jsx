@@ -16,10 +16,12 @@ const ProjectLayout = () => {
     };
 
     return (
-        <div className='flex flex-col items-center text-white'>
+        <div className='flex flex-col pt-5 items-center text-white'>
 
             <div className='flex flex-col w-3/5 gap-5'>
+
                 <span className='text-5xl font-bold hidden-animate-fade'>{title}</span>
+
                 <span className='text-justify hidden-animate-fade'>
                     {description}
                 </span>
@@ -44,14 +46,11 @@ const ProjectLayout = () => {
                         </ul>
                     </div>
 
-
                 </div>
 
-            </div>
 
-
-
-            <div className="w-4/6 p-10">
+                <span className="block font-bold text-lg hidden-animate-fade">System Screenshots:</span>
+               
                 <div className="columns-3 gap-5">
                     {images.map((img, index) => (
                         <img
@@ -63,10 +62,9 @@ const ProjectLayout = () => {
                         />
                     ))}
                 </div>
+
+
             </div>
-
-
-
 
 
             {/* ✅ This renders nested route (ImageView) */}

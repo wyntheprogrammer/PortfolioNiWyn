@@ -4,9 +4,9 @@ import React from 'react';
 import { useInView } from '../UseInView';
 import { useNavigate } from 'react-router-dom';
 
-import open from '../../assets/open.png'
+import open from '../../assets/open-black.png'
 
-const ProjectBox = ({ src, alt, title, description, features, tools, images, style }) => {
+const ProjectBox = ({ src, alt, title, description, features, tools, images, style, color1, color2 }) => {
 
     const [ref, isVisible] = useInView();
 
@@ -30,13 +30,13 @@ const ProjectBox = ({ src, alt, title, description, features, tools, images, sty
 
             />
 
-            {/* Overlay Gradient */}
             <div
                 className="absolute bottom-0 left-0 w-full h-full rounded-xl translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"
                 style={{
-                    background: 'linear-gradient(to top, #1e3a8a, #3b82f6, transparent)'
+                    background: `linear-gradient(to top, ${color1}, ${color2}, transparent)`
                 }}
             />
+
 
             {/* Open Button at Bottom Center */}
             <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-10">

@@ -10,7 +10,7 @@ import close from '../assets/close.png'
 import { div, img } from 'framer-motion/client';
 
 
-const CertView = () => {
+const ImageView = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const { images = [], currentIndex = 0 } = location.state || {};
@@ -40,25 +40,43 @@ const CertView = () => {
 
     // Listen to fullscreen changes
     useEffect(() => {
-    const handleFullscreenChange = () => {
-        setIsFullscreen(!!document.fullscreenElement);
+        const handleFullscreenChange = () => {
+            setIsFullscreen(!!document.fullscreenElement);
 
-        // Trigger recenter check
-        setTimeout(() => {
-            if (imageRef.current) {
-                const imageHeight = imageRef.current.naturalHeight * (imageRef.current.clientWidth / imageRef.current.naturalWidth);
-                setIsCentered(imageHeight < (window.innerHeight - 200));
+            // Trigger recenter check
+            setTimeout(() => {
+                if (imageRef.current) {
+                    const imageHeight = imageRef.current.naturalHeight * (imageRef.current.clientWidth / imageRef.current.naturalWidth);
+                    setIsCentered(imageHeight < (window.innerHeight - 200));
+                }
+            }, 300); // delay to allow layout update
+        };
+
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        return () => {
+            document.removeEventListener('fullscreenchange', handleFullscreenChange);
+        };
+    }, []);
+
+
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'ArrowRight') {
+                goNext();
+            } else if (e.key === 'ArrowLeft') {
+                goPrev();
+            } else if (e.key === 'F11') {
+                e.preventDefault(); // optional: prevent browser dev tools if needed
+                handleFullscreen();
             }
-        }, 300); // delay to allow layout update
-    };
+        };
 
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => {
-        document.removeEventListener('fullscreenchange', handleFullscreenChange);
-    };
-}, []);
-
-
+        document.addEventListener('keydown', handleKeyDown);
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [index, isFullscreen]); // depend on index and fullscreen state
 
 
 
@@ -141,14 +159,14 @@ const CertView = () => {
                     <div className="w-[60px]" />
                 )}
 
-                 <div className={`w-5/6 h-[calc(100vh-200px)] flex overflow-y-auto custom-scrollbar ${isCentered ? 'items-center' : 'items-start'}`}>
-      <img
-        ref={imageRef}
-        src={images[index]}
-        alt={`Image ${index + 1}`}
-        className="w-full rounded-lg border"
-      />
-    </div>
+                <div className={`w-5/6 h-[calc(100vh-200px)] flex overflow-y-auto custom-scrollbar ${isCentered ? 'items-center' : 'items-start'}`}>
+                    <img
+                        ref={imageRef}
+                        src={images[index]}
+                        alt={`Image ${index + 1}`}
+                        className="w-full rounded-lg border"
+                    />
+                </div>
 
                 {index < images.length - 1 ? (
                     <button onClick={goNext}>
@@ -168,4 +186,4 @@ const CertView = () => {
     );
 };
 
-export default CertView;
+export default ImageView;

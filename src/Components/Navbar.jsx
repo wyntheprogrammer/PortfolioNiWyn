@@ -9,13 +9,29 @@ const Navbar = ({ onScrollTo, togglePlay, isPlaying }) => {
   const location = useLocation();
 
   const handleClick = (section) => {
-    if (location.pathname !== '/') {
-      navigate('/home', { state: { scrollTo: section } });
+    if (section === 'projects') {
+      if (location.pathname.includes('/projlayout')) {
+        // From projlayout, go directly to projmore
+        navigate('/home/projmore');
+      } else if (location.pathname === '/home') {
+        // If already on home, just scroll
+        onScrollTo[section]();
+      } else {
+        // Else, go to /home and scroll after
+        navigate('/home', { state: { scrollTo: section } });
+      }
     } else {
-      onScrollTo[section]();
+      // For all other sections
+      if (location.pathname === '/home') {
+        onScrollTo[section]();
+      } else {
+        navigate('/home', { state: { scrollTo: section } });
+      }
     }
   };
 
+
+  
   const handleLogoClick = () => {
     if (isPlaying) togglePlay(); // pause the music
     navigate('/');
