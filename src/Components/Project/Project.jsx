@@ -17,11 +17,11 @@ const Project = () => {
     const navigate = useNavigate();
 
     return (
-        <div className='snap-start flex flex-col justify-center items-center gap-10 text-white my-10 h-[calc(100vh-5rem)] snap-start'>
+        <div className='snap-start flex flex-col justify-center items-center gap-10 text-white my-10 min-h-[calc(100vh-5rem)] snap-start'>
 
-            <span className='text-5xl text-white text-center block hidden-animate-fade'>Projects</span>
+            <span className='text-3xl sm:text-4xl md:text-5xl text-white text-center block hidden-animate-fade'>Projects</span>
 
-            <div className="flex flex-row justify-center gap-10">
+            <div className="flex flex-wrap justify-center gap-10 ml-10 mr-10">
 
                 {/* MakatiLibros Project */}
                 <ProjectBox

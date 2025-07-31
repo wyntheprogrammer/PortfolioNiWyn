@@ -66,10 +66,10 @@ import imgoc16 from '../../assets/Accomplishment/Online Certificates/16.jpg';
 
 const Accomplishment = () => {
     return (
-        <div className='snap-start flex flex-col justify-center bg-black my-10 h-[calc(100vh-5rem)] snap-start'>
-            <span className='text-5xl text-white text-center block p-10 hidden-animate-fade'>Accomplishment</span>
+        <div className='snap-start flex flex-col justify-center bg-black my-10 min-h-[calc(100vh-5rem)] gap-5 md:gap-10 snap-start'>
+              <span className="text-3xl sm:text-4xl md:text-5xl text-white hidden-animate-fade text-center block p-5">Accomplishment</span>
 
-            <div className="flex text-white justify-center gap-10">
+            <div className="flex flex-wrap text-white justify-center gap-4 md:gap-5 pr-20 pl-20">
 
                 <AccomBox
                     src={badge}

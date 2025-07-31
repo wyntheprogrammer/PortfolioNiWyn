@@ -13,7 +13,7 @@ export const Cover = ({ onStart }) => {
   return (
     <div className="relative h-screen w-screen overflow-hidden">
 
-      {/* Video as background */}
+      {/* Video Background */}
       <video
         src={SanjiCover}
         className="absolute top-0 left-0 w-full h-full object-cover"
@@ -23,26 +23,29 @@ export const Cover = ({ onStart }) => {
         playsInline
       />
 
-      {/* Semi-transparent black overlay */}
+      {/* Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-80" />
 
-      {/* Button content on top */}
-      <div className="flex flex-col gap-5 relative z-10 flex justify-center items-center h-full">
+      {/* Content */}
+      <div className="relative z-10 gap-5 flex flex-col items-center justify-center h-full px-4 text-center">
 
-        <h1 className="text-white text-8xl font-extrabold tracking-tight drop-shadow-xl animate-fade-in-up">
+        <h1 className="text-white text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tight drop-shadow-xl animate-fade-in-up">
           PORTFOLIO NI WYN
         </h1>
-        <p className="mt-4 text-white text-center text-2xl font-medium max-w-2xl drop-shadow-md animate-fade-in-up delay-200">
+
+        <p className="mt-4 text-white text-lg sm:text-xl md:text-2xl font-medium max-w-xl sm:max-w-2xl drop-shadow-md animate-fade-in-up delay-200">
           Hustle. Grind. Create. Witness the journey of a visionary through code, design, and passion.
         </p>
+
         <button
           onClick={handleStart}
-          className="mt-10 px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-300 transition-all animate-fade-in-up delay-500"
+          className="mt-8 sm:mt-10 px-6 sm:px-8 py-3 sm:py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-300 transition-all animate-fade-in-up delay-500"
         >
           Start the Journey ❤️‍🔥
         </button>
 
       </div>
     </div>
+
   );
 };

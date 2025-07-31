@@ -48,7 +48,7 @@ import gworkspace from '../../assets/gworkspace.png';
 
 const SkillsContent = () => {
     return (
-        <div className="flex flex-wrap gap-10">
+        <div className="flex flex-wrap gap-10 justify-center sm:justify-start">
 
             <div className='flex flex-col gap-2'>
                 <span className='text-#63C5DA' >Web Development</span>

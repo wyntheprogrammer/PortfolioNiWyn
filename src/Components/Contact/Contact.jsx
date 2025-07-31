@@ -128,23 +128,22 @@ const Contact = () => {
 
 
     return (
-        <div className='flex flex-col justify-center items-center gap-10 p-10 my-10 text-white h-[calc(100vh-5rem)] snap-start'>
+        <div className='flex flex-col justify-center items-center gap:10 p-10 my-10 text-white min-h-[calc(100vh-5rem)] snap-start'>
 
-            <div className="flex flex-row w-full justify-center">
-
+            <div className="flex flex-col lg:flex-row w-full gap-10 lg:gap-5 justify-center">
 
                 {/* Contact Form */}
 
-                <div className="w-5/12">
+                <div className="flex w-full lg:w-5/12 justify-center">
 
                     {alert && <Alert message={alert.message} type={alert.type} />}
 
                     <form
                         ref={formRef}
                         onSubmit={sendEmail}
-                        className="max-w-md mx-auto space-y-4 p-6 flex flex-col bg-gray-800 gap-5 rounded-lg hidden-animate-fade">
+                        className="w-full md:w-4/5 space-y-4 p-6 flex flex-col bg-gray-800 gap-5 rounded-lg hidden-animate-fade">
 
-                        <span className='text-5xl text-white'>Contact Me</span>
+                        <span className='text-3xl sm:text-4xl md:text-5xl text-white'>Contact Me</span>
 
                         <div>
                             <label htmlFor="name" className="block text-white font-medium mb-1">
@@ -196,18 +195,19 @@ const Contact = () => {
                 </div>
 
 
-                <div className=' w-5/12 flex flex-col justify-center items-center gap-5 hidden-animate-fade'>
+                <div className='w-full lg:w-5/12 flex flex-col justify-center items-center gap-5 hidden-animate-fade'>
                     
                     
-                    <span>
+                    <span className='md:w-4/5 '>
                         I'd love to hear from you! Whether it’s a project, feedback, or just a hello — feel free to reach out. Let’s build something great together. Drop a message and let’s talk!
                     </span>
 
 
                     {/* Contact Info*/}
 
-                    <div className="flex gap-10">
-                        <div className='flex flex-col m-5 items-center gap-2'>
+                    <div className="flex  md:w-4/5 justify-center w-full">
+
+                        <div className='flex flex-col m-5 items-center gap-2 w-full'>
                             <div className='w-14 h-14'>
                                 <img src={email} alt="Email" className='w-full h-full' />
                             </div>
@@ -215,7 +215,7 @@ const Contact = () => {
                             <span>jlemuellbacolod@gmail.com</span>
                         </div>
 
-                        <div className='flex flex-col m-5 items-center gap-2'>
+                        <div className='flex flex-col m-5 items-center gap-2 w-full'>
                             <div className='w-14 h-14'>
                                 <img src={phone} alt="Phone" className='w-full h-full' />
                             </div>
@@ -228,7 +228,7 @@ const Contact = () => {
 
                     {/* Map Container */}
 
-                    <div className="h-[250px] w-full z-0 rounded-lg overflow-hidden"> {/* Outer wrapper sets dimensions */}
+                    <div className="h-[250px] w-full md:w-4/5 z-0 rounded-lg overflow-hidden"> {/* Outer wrapper sets dimensions */}
                         <MapContainer
                             center={position}
                             zoom={13}

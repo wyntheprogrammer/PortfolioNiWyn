@@ -19,7 +19,7 @@ const ProjectBox = ({ src, alt, title, description, features, tools, images, sty
     };
 
     return (
-        <div className="h-96 rounded-xl overflow-hidden group relative">
+        <div className="h-80 md:h-96 rounded-xl overflow-hidden group relative">
             {/* Image */}
             <img
                 ref={ref}
@@ -27,7 +27,6 @@ const ProjectBox = ({ src, alt, title, description, features, tools, images, sty
                 alt={alt}
                 className={`w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-110 ${isVisible ? 'stag' : ''}`}
                 style={style}
-
             />
 
             <div

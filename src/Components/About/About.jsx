@@ -1,4 +1,4 @@
-import React, { useState}  from 'react';
+import React, { useState } from 'react';
 import SkillsContent from './SkillsContent';
 import EducationContent from './EducationContent';
 
@@ -11,48 +11,55 @@ const About = () => {
     const [selectedTab, setSelectedTab] = useState('skills');
 
     return (
-        <div className="flex flex-row gap-14 items-center justify-center bg-black pt-10 px-10 my-10 h-[calc(100vh-5rem)] snap-start">
-            <img src={SanjiSmoke} alt="SanjiSmoke" className=' h-5/6 rounded-2xl hidden-animate-swipe' />
-            <div className='flex flex-col w-3/6 gap-4'>
-                <span className='text-5xl text-white hidden-animate-fade'>About Me</span>
-                <span className='text-base text-white hidden-animate-fade'>Hardworking and committed to completing tasks efficiently and on time, with a solid foundation from several programming projects. Eager to learn and grow through hands-on experience and mentorship in your company.</span>
-                <div></div>
-                <ul className="flex flex-row gap-8 text-white hidden-animate-fade">
+        <div className="flex flex-col lg:flex-row sm:gap-10 items-center justify-center bg-black pt-10 px-6 sm:px-10 my-10 min-h-[calc(100vh-5rem)] snap-start">
+
+            {/* Image */}
+            <img
+                src={SanjiSmoke}
+                alt="SanjiSmoke"
+                className="w-4/5 sm:w-3/5 md:w-2/5 lg:w-[30%] xl:w-[28%] h-auto rounded-2xl hidden-animate-swipe"
+            />
+
+            {/* Text Content */}
+            <div className="flex flex-col w-full md:w-4/5 lg:w-3/5 xl:w-[60%] gap-4 text-center sm:text-left mt-10 sm:mt-0">
+
+                {/* Heading */}
+                <span className="text-3xl sm:text-4xl md:text-5xl text-white hidden-animate-fade">
+                    About Me
+                </span>
+
+                {/* Description */}
+                <span className="text-sm sm:text-base md:text-lg text-white leading-relaxed hidden-animate-fade">
+                    Hardworking and committed to completing tasks efficiently and on time, with a solid foundation from several programming projects. Eager to learn and grow through hands-on experience and mentorship in your company.
+                </span>
+
+                {/* Tabs */}
+                <ul className="flex flex-row gap-4 sm:gap-8 justify-center sm:justify-start text-white hidden-animate-fade mt-4 sm:mt-2">
                     <li
-                        className={`border-b-2 text-xl cursor-pointer 
-                            ${selectedTab === 'skills' ? 'border-[#63C5DA]' : 'border-transparent'}`
-                        }
+                        className={`border-b-2 text-base sm:text-xl cursor-pointer 
+        ${selectedTab === 'skills' ? 'border-[#63C5DA]' : 'border-transparent'}`}
                         onClick={() => setSelectedTab('skills')}
                     >
                         Skills
                     </li>
-
-                    <li className='text-xl'>|</li>
-
+                    <li className="text-base sm:text-xl">|</li>
                     <li
-                        className={`text-xl cursor-pointer 
-                            ${selectedTab === 'education' ? 'border-b-2 border-[#63C5DA]' : 'border-trasparent'}`
-                        }
+                        className={`text-base sm:text-xl cursor-pointer 
+        ${selectedTab === 'education' ? 'border-b-2 border-[#63C5DA]' : 'border-transparent'}`}
                         onClick={() => setSelectedTab('education')}
                     >
                         Education
                     </li>
                 </ul>
 
-                {selectedTab === 'skills' ? (
-
-                    //Skills Content
-                    <SkillsContent />
-
-                ) : (
-
-                    //Education Content
-                    <EducationContent />
-
-                )}
+                {/* Conditional Content */}
+                <div className="mt-4">
+                    {selectedTab === 'skills' ? <SkillsContent /> : <EducationContent />}
+                </div>
 
             </div>
         </div>
+
     )
 }
 
