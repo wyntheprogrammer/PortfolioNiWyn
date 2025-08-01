@@ -134,7 +134,7 @@ const Contact = () => {
 
                 {/* Contact Form */}
 
-                <div className="flex w-full lg:w-5/12 justify-center">
+                <div className="flex w-full lg:w-5/12 justify-end">
 
                     {alert && <Alert message={alert.message} type={alert.type} />}
 
@@ -143,7 +143,7 @@ const Contact = () => {
                         onSubmit={sendEmail}
                         className="w-full md:w-4/5 space-y-4 p-6 flex flex-col bg-gray-800 gap-5 rounded-lg hidden-animate-fade">
 
-                        <span className='text-3xl sm:text-4xl md:text-5xl text-white'>Contact Me</span>
+                        <span className='text-3xl md:text-4xl xl:text-5xl text-white'>Contact Me</span>
 
                         <div>
                             <label htmlFor="name" className="block text-white font-medium mb-1">
@@ -195,7 +195,7 @@ const Contact = () => {
                 </div>
 
 
-                <div className='w-full lg:w-5/12 flex flex-col justify-center items-center gap-5 hidden-animate-fade'>
+                <div className='w-full lg:w-5/12 flex flex-col justify-center items-left gap-5 hidden-animate-fade'>
                     
                     
                     <span className='md:w-4/5 '>

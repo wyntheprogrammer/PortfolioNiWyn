@@ -1,44 +1,31 @@
-import React from 'react'
+import { useState } from 'react'
 import ShLogo from '../assets/sh-logo.png'
 
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+import menu from '../assets/menu.png'
+import close from '../assets/close.png'
+
+import NavbarContents from './NavbarContents';
 
 const Navbar = ({ onScrollTo, togglePlay, isPlaying }) => {
 
   const navigate = useNavigate();
-  const location = useLocation();
 
-  const handleClick = (section) => {
-    if (section === 'projects') {
-      if (location.pathname.includes('/projlayout')) {
-        // From projlayout, go directly to projmore
-        navigate('/home/projmore');
-      } else if (location.pathname === '/home') {
-        // If already on home, just scroll
-        onScrollTo[section]();
-      } else {
-        // Else, go to /home and scroll after
-        navigate('/home', { state: { scrollTo: section } });
-      }
-    } else {
-      // For all other sections
-      if (location.pathname === '/home') {
-        onScrollTo[section]();
-      } else {
-        navigate('/home', { state: { scrollTo: section } });
-      }
-    }
-  };
-
-
-  
   const handleLogoClick = () => {
     if (isPlaying) togglePlay(); // pause the music
     navigate('/');
   };
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <div className="flex justify-between  bg-black h-20 items-center px-10 sticky  top-0 z-50 hidden-animate-fade">
+    <div className="flex justify-between  w-full bg-black h-20 items-center px-10 sticky  top-0 z-50 hidden-animate-fade">
+
       <div className="h-full w-auto">
         <img
           src={ShLogo}
@@ -47,15 +34,50 @@ const Navbar = ({ onScrollTo, togglePlay, isPlaying }) => {
           onClick={handleLogoClick}
         />
       </div>
-      <ul className="flex flex-row gap-10 text-white">
-        <li className="hover:text-[#63C5DA] cursor-pointer hover:scale-110 transition-transform duration-300" onClick={() => handleClick('home')}>Home</li>
-        <li className="hover:text-[#63C5DA] cursor-pointer hover:scale-110 transition-transform duration-300" onClick={() => handleClick('about')}>About Me</li>
-        <li className="hover:text-[#63C5DA] cursor-pointer hover:scale-110 transition-transform duration-300" onClick={() => handleClick('accomplishment')}>Accomplishment</li>
-        <li className="hover:text-[#63C5DA] cursor-pointer hover:scale-110 transition-transform duration-300" onClick={() => handleClick('projects')}>Projects</li>
-        <li className="hover:text-[#63C5DA] cursor-pointer hover:scale-110 transition-transform duration-300" onClick={() => handleClick('contact')}>Contact</li>
-      </ul>
-      <button className='bg-blue-500 py-2 px-3 text-white font-bold rounded-full text-sm hover:scale-110 transition-transform duration-300'>DOWNLOAD CV</button>
+
+      <div className='hidden lg:flex flex-row gap-10  w-full  justify-end items-center'>
+        <NavbarContents onScrollTo={onScrollTo} />
+      </div>
+
+
+      {/* Menu Button (Mobile Only) */}
+      <div
+        className="relative block lg:hidden w-8 h-8 flex justify-center items-center cursor-pointer hover:scale-110 transition-transform duration-[1200ms]"
+        onClick={handleMenuClick}
+      >
+        {/* Menu icon */}
+        <img
+          src={menu}
+          alt="menu"
+          className={`w-full h-full absolute top-0 left-0 transition-opacity duration-[1200ms] ease-in-out ${isMenuOpen ? 'opacity-0' : 'opacity-100'
+            }`}
+        />
+
+        {/* Close icon */}
+        <img
+          src={close}
+          alt="close"
+          className={`absolute top-1/2 left-1/2 w-5 h-5 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-[1200ms] ease-in-out ${isMenuOpen ? 'opacity-100' : 'opacity-0'
+            }`}
+        />
+      </div>
+
+
+
+
+      {/* Navbar Contents - toggled on mobile */}
+      <div className={`absolute top-full right-0 bg-black text-white z-10 p-4 w-full h-[calc(100vh-5rem)] flex flex-col gap-10 justify-center items-center 
+  transition-all duration-500 ease-in-out transform ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-5 pointer-events-none'} lg:hidden`}>
+       
+        <NavbarContents onScrollTo={onScrollTo} closeMenu={handleMenuClick}/>
+
+      </div>
+
+
+
     </div>
+
+
   )
 }
 

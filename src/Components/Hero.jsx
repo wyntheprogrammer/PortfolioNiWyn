@@ -1,6 +1,7 @@
 import React from 'react'
 import SanjiProfile from '../assets/sanji.png'
 
+import wyn from '../assets/Wyn/wyn3.jpg'
 
 const Hero = () => {
     return (
@@ -8,10 +9,11 @@ const Hero = () => {
 
             {/* Profile Image */}
             <img
-                src={SanjiProfile}
+                src={wyn}
                 alt="SanjiSmoke"
-                className="w-40 sm:w-60 md:w-72 lg:w-80 xl:w-96 2xl:w-[28rem] h-auto hidden-animate-swipe"
+                className="w-40 sm:w-60 md:w-72 lg:w-80 xl:w-96 2xl:w-[28rem] h-auto fade-sides-mask hidden-animate-swipe"
             />
+
 
             {/* Text Content */}
             <div className="flex flex-col w-full sm:w-4/6 md:w-3/6 gap-3 sm:gap-4 text-center sm:text-left">

@@ -20,7 +20,7 @@ const ProjectMore = () => {
     return (
         <div className='flex flex-col items-center justify-center gap-20 text-white  h-auto m-12'>
 
-            <span className='text-5xl text-white text-center block hidden-animate-fade'>Projects</span>
+            <span className='text-3xl sm:text-4xl md:text-5xl text-white text-center block hidden-animate-fade'>Projects</span>
 
             <div className="w-4/5  flex flex-row flex-wrap justify-center gap-10">
 

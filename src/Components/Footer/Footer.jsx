@@ -13,9 +13,9 @@ const Footer = () => {
     return (
 
         <div className="flex justify-center items-center px-16 py-10 text-white snap-start">
-            <div className='flex flex-col lg:flex-row justify-between md:w-4/6 gap-5 lg:gap-0'>
+            <div className='flex flex-col xl:flex-row justify-between lg:w-4/6 gap-5 xl:gap-0'>
 
-                <div className='flex flex-col w-full lg:w-5/12 gap-4 hidden-animate-fade'>
+                <div className='flex flex-col w-full xl:w-5/12 gap-4 hidden-animate-fade'>
                     <div className="h-20 flex flex-row text-3xl font-bold gap-2 items-center md:justify-start justify-center w-full">
                         <img src={shLogo} alt="Logo" className="h-full object-contain" />
                         <span>Portfolio ni Wyn</span>
@@ -38,7 +38,7 @@ const Footer = () => {
                 <div className='hidden-animate-fade'>
                     <span className='text-xl font-bold text-center md:text-start block'>Get In Touch</span>
 
-                    <ul className='flex flex-col gap-2 mt-6 items-center md:items-start w-full mb-10 md:mb-0'>
+                    <ul className='flex flex-col gap-2 mt-6 items-center md:items-start w-full mb-10 xl:mb-0'>
                         <li className='flex flex-row gap-2 items-center w-fit'>
                             <div className="w-6c h-6">
                                 <img src={phone} alt="Facebook" className='w-full h-full' />

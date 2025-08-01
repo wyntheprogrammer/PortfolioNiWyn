@@ -5,7 +5,7 @@ import EducationContent from './EducationContent';
 
 // Personal assets
 import SanjiSmoke from '../../assets/sanji-smoke.gif';
-
+import wyn from '../../assets/Wyn/wyn2.jpg'
 
 const About = () => {
     const [selectedTab, setSelectedTab] = useState('skills');
@@ -15,9 +15,9 @@ const About = () => {
 
             {/* Image */}
             <img
-                src={SanjiSmoke}
+                src={wyn}
                 alt="SanjiSmoke"
-                className="w-4/5 sm:w-3/5 md:w-2/5 lg:w-[30%] xl:w-[28%] h-auto rounded-2xl hidden-animate-swipe"
+                className="w-4/5 sm:w-3/5 md:w-2/5 lg:w-[30%] xl:w-[28%] h-auto rounded-2xl fade-sides-mask hidden-animate-swipe"
             />
 
             {/* Text Content */}
