@@ -9,7 +9,6 @@ import close from '../assets/close.png'
 
 import { div, img } from 'framer-motion/client';
 
-
 const ImageView = () => {
     const location = useLocation();
     const navigate = useNavigate();
@@ -186,7 +185,7 @@ const ImageView = () => {
                 ) : (
                     <div className="w-[60px]" />
                 )}
-                
+
             </div>
         </div>
     );

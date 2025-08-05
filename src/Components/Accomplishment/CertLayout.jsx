@@ -1,38 +1,18 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import { useLocation, useNavigate, Outlet } from 'react-router-dom';
 
-import compcert from '../../assets/compcert.jpg';
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 const CertLayout = () => {
   const location = useLocation();
+
   const navigate = useNavigate();
+
   const { title, description, images = [] } = location.state || {};
 
-  const handleImageClick = (index) => {
-    navigate('/home/imageview', {
-      state: {
-        images,
-        currentIndex: index,
-      },
-    });
-  };
+  const [lightboxIndex, setLightboxIndex] = useState(-1);
 
-
-
-  const imageRefs = useRef([]); // array to hold refs
-
-  const handleFullscreen = (index) => {
-    const ref = imageRefs.current[index];
-    if (ref) {
-      if (document.fullscreenElement) {
-        document.exitFullscreen();
-      } else {
-        ref.requestFullscreen().catch((err) => {
-          console.error("Failed to enter fullscreen:", err);
-        });
-      }
-    }
-  };
 
   return (
     <div className='flex flex-col pt-5 items-center text-white'>
@@ -45,19 +25,22 @@ const CertLayout = () => {
           {description}
         </span>
 
-
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 w-full">
           {images.map((img, index) => (
-            <img
+             <img
               key={index}
               src={img}
               alt={`Certificate ${images.length - index}`}
-              ref={(el) => (imageRefs.current[index] = el)} // store each image DOM in array
               onClick={() => {
                 if (window.innerWidth < 1280) {
-                  handleFullscreen(index);
+                  setLightboxIndex(index); // open lightbox at this image
                 } else {
-                  handleImageClick(index);
+                  navigate("/home/imageview", {
+                    state: {
+                      images,
+                      currentIndex: index,
+                    },
+                  });
                 }
               }}
               className="mb-5 rounded-lg border border-gray-500 break-inside-avoid hidden-animate-fade cursor-pointer transition-transform duration-200 hover:scale-105"
@@ -65,8 +48,17 @@ const CertLayout = () => {
           ))}
         </div>
 
-
       </div>
+
+
+      {lightboxIndex >= 0 && (
+        <Lightbox
+          open
+          index={lightboxIndex}
+          close={() => setLightboxIndex(-1)}
+          slides={images.map((src) => ({ src }))}
+        />
+      )}
 
 
       {/* ✅ This renders nested route (CertView) */}

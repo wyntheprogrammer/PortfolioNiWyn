@@ -5,7 +5,7 @@ import wyn from '../assets/Wyn/wyn3.jpg'
 
 const Hero = () => {
     return (
-        <div className="snap-start flex flex-col sm:flex-row gap-10 sm:gap-14 items-center justify-center bg-black pt-10 px-6 sm:px-10 my-10 min-h-[calc(100vh-5rem)]">
+        <div className="snap-start flex flex-col sm:flex-row gap-10 sm:gap-14 items-center justify-center bg-black pt-10 px-6 sm:px-10 my-10 min-h-[calc(100vh-8rem)]  md:min-h-[calc(100vh-5rem)]">
 
             {/* Profile Image */}
             <img
