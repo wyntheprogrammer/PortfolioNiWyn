@@ -4,6 +4,9 @@ import { useLocation, useNavigate, Outlet } from 'react-router-dom'
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
+// Zoom plugin
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+
 const ProjectLayout = () => {
     const location = useLocation();
 
@@ -20,7 +23,7 @@ const ProjectLayout = () => {
 
                 <span className='text-3xl sm:text-4xl md:text-5xl font-bold hidden-animate-fade'>{title}</span>
 
-                <span className='text-sm sm:text-base md:text-lg lg:text-xl text-justify hidden-animate-fade'>
+                <span className='text-sm sm:text-base md:text-lg text-justify hidden-animate-fade'>
                     {description}
                 </span>
 
@@ -55,18 +58,7 @@ const ProjectLayout = () => {
                             key={index}
                             src={img}
                             alt={`Projects ${images.length - index}`}
-                            onClick={() => {
-                                if (window.innerWidth < 1280) {
-                                    setLightboxIndex(index); // open lightbox at this image
-                                } else {
-                                    navigate("/home/imageview", {
-                                        state: {
-                                            images,
-                                            currentIndex: index,
-                                        },
-                                    });
-                                }
-                            }}
+                            onClick={() => { setLightboxIndex(index); }}
                             className="mb-5 rounded-lg border border-gray-500 break-inside-avoid hidden-animate-fade cursor-pointer transition-transform duration-200 hover:scale-105"
                         />
                     ))}
@@ -80,6 +72,7 @@ const ProjectLayout = () => {
                     index={lightboxIndex}
                     close={() => setLightboxIndex(-1)}
                     slides={images.map((src) => ({ src }))}
+                    plugins={[Zoom]} 
                 />
             )}
 

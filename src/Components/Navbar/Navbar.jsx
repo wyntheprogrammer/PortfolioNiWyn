@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import ShLogo from '../assets/sh-logo.png'
+import ShLogo from '../../assets/sh-logo.png'
 
 import { useNavigate } from 'react-router-dom';
 
-import menu from '../assets/menu.png'
-import close from '../assets/close.png'
+import menu from '../../assets/menu.png'
+import close from '../../assets/close.png'
 
 import NavbarContents from './NavbarContents';
 

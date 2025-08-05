@@ -17,7 +17,7 @@ const Project = () => {
     const navigate = useNavigate();
 
     return (
-        <div className='snap-start flex flex-col justify-center items-center gap-10 text-white my-10 min-h-[calc(100vh-5rem)] snap-start'>
+        <div className='flex flex-col justify-center items-center gap-10 text-white my-10 min-h-[calc(100vh-5rem)] sm:snap-start'>
 
             <span className='text-3xl sm:text-4xl md:text-5xl text-white text-center block hidden-animate-fade'>Projects</span>
 

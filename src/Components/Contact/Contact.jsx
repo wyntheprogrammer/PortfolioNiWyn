@@ -128,7 +128,7 @@ const Contact = () => {
 
 
     return (
-        <div className='flex flex-col justify-center items-center gap:10 p-10 my-10 text-white min-h-[calc(100vh-5rem)] snap-start'>
+        <div className='flex flex-col justify-center items-center gap:10 p-10 my-10 text-white min-h-[calc(100vh-5rem)] sm:snap-start'>
 
             <div className="flex flex-col lg:flex-row w-full gap-10 lg:gap-5 justify-center">
 

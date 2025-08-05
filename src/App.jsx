@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 
 import Layout from './Components/Layout';
 import CertLayout from './Components/Accomplishment/CertLayout';
-import ImageView from './Components/ImageView';
 import { Cover } from './Components/Cover';
 
 import Music from './Components/Music';
@@ -25,7 +24,6 @@ const AppRoutes = ({ togglePlay, isPlaying }) => {
         <Route path="/" element={<Cover onStart={togglePlay} />} />
         <Route path="/home" element={<Layout togglePlay={togglePlay} isPlaying={isPlaying} />}>
           <Route path="certlayout" element={<CertLayout />} />
-          <Route path="imageview" element={<ImageView />} />
           <Route path="projmore" element={<ProjectMore />} />
           <Route path="projlayout" element={<ProjectLayout />} />
         </Route>

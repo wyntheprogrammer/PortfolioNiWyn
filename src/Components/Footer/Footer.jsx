@@ -12,7 +12,7 @@ import location from '../../assets/location.png'
 const Footer = () => {
     return (
 
-        <div className="flex justify-center items-center px-16 py-10 text-white snap-start">
+        <div className="flex justify-center items-center px-16 py-10 text-white md:snap-start">
             <div className='flex flex-col xl:flex-row justify-between lg:w-4/6 gap-5 xl:gap-0'>
 
                 <div className='flex flex-col w-full xl:w-5/12 gap-4 hidden-animate-fade'>

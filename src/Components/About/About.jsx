@@ -11,7 +11,7 @@ const About = () => {
     const [selectedTab, setSelectedTab] = useState('skills');
 
     return (
-        <div className="flex flex-col lg:flex-row sm:gap-10 items-center justify-center bg-black pt-10 px-6 sm:px-10 my-10 min-h-[calc(100vh-5rem)] snap-start">
+        <div className="flex flex-col lg:flex-row sm:gap-10 items-center justify-center bg-black pt-10 px-6 sm:px-10 my-10 min-h-[calc(100vh-5rem)] sm:snap-start">
 
             {/* Image */}
             <img

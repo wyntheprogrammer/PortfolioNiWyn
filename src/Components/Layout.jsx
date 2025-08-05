@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
-import Navbar from './Navbar';
+import Navbar from './Navbar/Navbar';
 import Hero from './Hero';
 import About from './About/About';
 import Accomplishment from './Accomplishment/Accomplishment';
@@ -31,10 +31,10 @@ const Layout = ({ togglePlay, isPlaying }) => {
 
     const scrollHandlers = {
         home: () => scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'smooth' }),
-        about: () => scrollTo(aboutRef),
-        accomplishment: () => scrollTo(accomplishmentRef),
-        projects: () => scrollTo(projectsRef),
-        contact: () => scrollTo(contactRef),
+        about: () => aboutRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }),
+        accomplishment: () => accomplishmentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }),
+        projects: () => projectsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }),
+        contact: () => contactRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }),
     };
 
     // 1. Smooth scrolling if navigated from /certlayout
@@ -78,15 +78,15 @@ const Layout = ({ togglePlay, isPlaying }) => {
 
     return (
         <div className="h-screen bg-black flex flex-col">
-            <Navbar onScrollTo={scrollHandlers}  togglePlay={togglePlay} isPlaying={isPlaying} />
+            <Navbar onScrollTo={scrollHandlers} togglePlay={togglePlay} isPlaying={isPlaying} />
             <div
                 ref={scrollContainerRef}
-                className={`flex-1 overflow-y-scroll custom-scrollbar ${location.pathname === '/home' ? 'snap-y snap-mandatory' : ''
+                className={`flex flex-col flex-1 overflow-y-scroll custom-scrollbar gap-10  ${location.pathname === '/home' ? 'snap-y snap-mandatory' : ''
                     }`}
             >
                 {location.pathname === '/home' && (
                     <>
-                        <Hero />
+                        <section><Hero /></section>
                         <section ref={aboutRef}><About /></section>
                         <section ref={accomplishmentRef}><Accomplishment /></section>
                         <section ref={projectsRef}><Project /></section>

@@ -4,6 +4,9 @@ import { useLocation, useNavigate, Outlet } from 'react-router-dom';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
+// Zoom plugin
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+
 const CertLayout = () => {
   const location = useLocation();
 
@@ -27,22 +30,11 @@ const CertLayout = () => {
 
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 w-full">
           {images.map((img, index) => (
-             <img
+            <img
               key={index}
               src={img}
               alt={`Certificate ${images.length - index}`}
-              onClick={() => {
-                if (window.innerWidth < 1280) {
-                  setLightboxIndex(index); // open lightbox at this image
-                } else {
-                  navigate("/home/imageview", {
-                    state: {
-                      images,
-                      currentIndex: index,
-                    },
-                  });
-                }
-              }}
+              onClick={() => { setLightboxIndex(index); }}
               className="mb-5 rounded-lg border border-gray-500 break-inside-avoid hidden-animate-fade cursor-pointer transition-transform duration-200 hover:scale-105"
             />
           ))}
@@ -57,7 +49,9 @@ const CertLayout = () => {
           index={lightboxIndex}
           close={() => setLightboxIndex(-1)}
           slides={images.map((src) => ({ src }))}
+          plugins={[Zoom]} 
         />
+
       )}
 
 
