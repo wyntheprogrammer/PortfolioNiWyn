@@ -198,16 +198,16 @@ const Contact = () => {
                 <div className='w-full lg:w-5/12 flex flex-col justify-center items-left gap-5 hidden-animate-fade'>
                     
                     
-                    <span className='md:w-4/5 '>
+                    <span className='md:w-4/5 text-center md:text-justify'>
                         I'd love to hear from you! Whether it’s a project, feedback, or just a hello — feel free to reach out. Let’s build something great together. Drop a message and let’s talk!
                     </span>
 
 
                     {/* Contact Info*/}
 
-                    <div className="flex  md:w-4/5 justify-center w-full">
+                    <div className="flex flex-col md:flex-row gap-5 md:w-4/5 justify-center w-full">
 
-                        <div className='flex flex-col m-5 items-center gap-2 w-full'>
+                        <div className='flex flex-col items-center gap-2 w-full'>
                             <div className='w-14 h-14'>
                                 <img src={email} alt="Email" className='w-full h-full' />
                             </div>
@@ -215,13 +215,14 @@ const Contact = () => {
                             <span>jlemuellbacolod@gmail.com</span>
                         </div>
 
-                        <div className='flex flex-col m-5 items-center gap-2 w-full'>
+                        <div className='flex flex-col items-center gap-2 w-full'>
                             <div className='w-14 h-14'>
                                 <img src={phone} alt="Phone" className='w-full h-full' />
                             </div>
                             <span className='font-bold'>Phone Number</span>
                             <span>09957733887</span>
                         </div>
+
                     </div>
 
 

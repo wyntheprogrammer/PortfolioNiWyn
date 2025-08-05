@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useLocation, useNavigate, Outlet } from 'react-router-dom';
 
 import compcert from '../../assets/compcert.jpg';
@@ -17,10 +17,27 @@ const CertLayout = () => {
     });
   };
 
+
+
+  const imageRefs = useRef([]); // array to hold refs
+
+  const handleFullscreen = (index) => {
+    const ref = imageRefs.current[index];
+    if (ref) {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        ref.requestFullscreen().catch((err) => {
+          console.error("Failed to enter fullscreen:", err);
+        });
+      }
+    }
+  };
+
   return (
     <div className='flex flex-col pt-5 items-center text-white'>
 
-      <div className='flex flex-col w-3/5 gap-5'>
+      <div className='flex flex-col w-4/5 lg:w-3/5 gap-5'>
 
         <span className='text-3xl sm:text-4xl md:text-5xl font-bold hidden-animate-fade'>{title}</span>
 
@@ -35,7 +52,14 @@ const CertLayout = () => {
               key={index}
               src={img}
               alt={`Certificate ${images.length - index}`}
-              onClick={() => handleImageClick(index)}
+              ref={(el) => (imageRefs.current[index] = el)} // store each image DOM in array
+              onClick={() => {
+                if (window.innerWidth < 1280) {
+                  handleFullscreen(index);
+                } else {
+                  handleImageClick(index);
+                }
+              }}
               className="mb-5 rounded-lg border border-gray-500 break-inside-avoid hidden-animate-fade cursor-pointer transition-transform duration-200 hover:scale-105"
             />
           ))}

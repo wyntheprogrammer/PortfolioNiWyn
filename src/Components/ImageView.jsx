@@ -16,6 +16,7 @@ const ImageView = () => {
     const { images = [], currentIndex = 0 } = location.state || {};
     const [index, setIndex] = useState(currentIndex);
     const [isFullscreen, setIsFullscreen] = useState(false);
+    
     const viewerRef = useRef(null);
 
     const goNext = () => {
@@ -132,6 +133,7 @@ const ImageView = () => {
                     }
                 </button>
 
+
                 <button onClick={() => navigate(-1)}>
                     <div className='w-6 h-6'>
                         <img
@@ -141,6 +143,7 @@ const ImageView = () => {
                         />
                     </div>
                 </button>
+
             </div>
 
             <div className="flex flex-row justify-between items-center gap-10 w-full h-full hidden-animate-fade ">
@@ -159,7 +162,8 @@ const ImageView = () => {
                     <div className="w-[60px]" />
                 )}
 
-                <div className={`w-5/6 h-[calc(100vh-200px)] flex overflow-y-auto custom-scrollbar ${isCentered ? 'items-center' : 'items-start'}`}>
+
+                <div className={`w-5/6 h-[calc(100vh-200px)] flex overflow-y-auto custom-scrollbar ${isCentered ? 'items-center' : 'items-start'}`}  onClick={handleFullscreen}>
                     <img
                         ref={imageRef}
                         src={images[index]}
@@ -167,6 +171,7 @@ const ImageView = () => {
                         className="w-full rounded-lg border"
                     />
                 </div>
+
 
                 {index < images.length - 1 ? (
                     <button onClick={goNext}>
@@ -181,6 +186,7 @@ const ImageView = () => {
                 ) : (
                     <div className="w-[60px]" />
                 )}
+                
             </div>
         </div>
     );

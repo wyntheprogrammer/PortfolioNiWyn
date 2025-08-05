@@ -24,7 +24,7 @@ const Navbar = ({ onScrollTo, togglePlay, isPlaying }) => {
   };
 
   return (
-    <div className="flex justify-between  w-full bg-black h-20 items-center px-10 sticky  top-0 z-50 hidden-animate-fade">
+    <div className="flex justify-between w-full bg-black h-20 items-center px-5 md:px-10 sticky top-0 z-50 hidden-animate-fade">
 
       <div className="h-full w-auto">
         <img
@@ -66,8 +66,7 @@ const Navbar = ({ onScrollTo, togglePlay, isPlaying }) => {
 
 
       {/* Navbar Contents - toggled on mobile */}
-      <div className={`absolute top-full right-0 bg-black text-white z-10 p-4 w-full h-[calc(100vh-5rem)] flex flex-col gap-10 justify-center items-center 
-  transition-all duration-500 ease-in-out transform ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-5 pointer-events-none'} lg:hidden`}>
+      <div className={`absolute top-full right-0 bg-black text-white z-10 p-4 w-full h-[calc(100vh-5rem)] flex flex-col gap-10 justify-center items-center transition-all duration-500 ease-in-out transform ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-5 pointer-events-none'} lg:hidden`}>
        
         <NavbarContents onScrollTo={onScrollTo} closeMenu={handleMenuClick}/>
 
