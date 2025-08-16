@@ -51,7 +51,7 @@ const SkillsContent = () => {
         <div className="flex flex-wrap gap-10 justify-center sm:justify-start">
 
             <div className='flex flex-col gap-2'>
-                <span className='text-#63C5DA' >Web Development</span>
+                <span className='text-[#E9D676]' >Web Development</span>
                 <div className="flex flex-row gap-2">
                     <SkillsIcon src={html} alt="html" label="HTML" style={{ "--delay": "100ms" }} />
                     <SkillsIcon src={css} alt="css" label="CSS" style={{ "--delay": "200ms" }} />
@@ -63,7 +63,7 @@ const SkillsContent = () => {
             </div>
 
             <div className='flex flex-col gap-2'>
-                <span className='text-#63C5DA'>PHP Frameworks</span>
+                <span className='text-[#E9D676]'>PHP Frameworks</span>
                 <div className="flex flex-row gap-2">
                     <SkillsIcon src={laravel} alt="laravel" label="Laravel" style={{ "--delay": "100ms" }}/>
                     <SkillsIcon src={codeigniter} alt="codeigniter" label="Codeigniter" style={{ "--delay": "200ms" }}/>
@@ -71,7 +71,7 @@ const SkillsContent = () => {
             </div>
 
             <div className='flex flex-col gap-2'>
-                <span className='text-#63C5DA'>Progamming Language</span>
+                <span className='text-[#E9D676]'>Progamming Language</span>
                 <div className="flex flex-row gap-2">
                     <SkillsIcon src={java} alt="java" label="Java" style={{ "--delay": "100ms" }}/>
                     <SkillsIcon src={python} alt="python" label="Python" style={{ "--delay": "200ms" }}/>
@@ -80,7 +80,7 @@ const SkillsContent = () => {
             </div>
 
             <div className='flex flex-col gap-2'>
-                <span className='text-#63C5DA'>Database Mangement</span>
+                <span className='text-[#E9D676]'>Database Mangement</span>
                 <div className="flex flex-row gap-2">
                     <SkillsIcon src={mysql} alt="mysql" label="MySql" style={{ "--delay": "100ms" }} />
                     <SkillsIcon src={sqlite} alt="sqlite" label="SQLite" style={{ "--delay": "200ms" }} />
@@ -88,7 +88,7 @@ const SkillsContent = () => {
             </div>
 
             <div className='flex flex-col gap-2'>
-                <span className='text-#63C5DA'>Development Environment</span>
+                <span className='text-[#E9D676]'>Development Environment</span>
                 <div className="flex flex-row gap-2">
                     <SkillsIcon src={netbeans} alt="netbeans" label="Netbeans" style={{ "--delay": "100ms" }} />
                     <SkillsIcon src={eclipse} alt="eclipse" label="Eclipse" style={{ "--delay": "200ms" }}/>
@@ -100,7 +100,7 @@ const SkillsContent = () => {
 
 
             <div className='flex flex-col gap-2'>
-                <span className='text-#63C5DA'>Version Control</span>
+                <span className='text-[#E9D676]'>Version Control</span>
                 <div className="flex flex-row gap-2">
                     <SkillsIcon src={github} alt="github" label="GitHub" style={{ "--delay": "100ms" }}/>
                 </div>
@@ -108,7 +108,7 @@ const SkillsContent = () => {
 
 
             <div className='flex flex-col gap-2'>
-                <span className='text-#63C5DA'>Networking Tools</span>
+                <span className='text-[#E9D676]'>Networking Tools</span>
                 <div className="flex flex-row gap-2">
                     <SkillsIcon src={cisco} alt="cisco" label="Cisco Packet Tracer" style={{ "--delay": "100ms" }} />
                 </div>
@@ -116,7 +116,7 @@ const SkillsContent = () => {
 
 
             <div className='flex flex-col gap-2'>
-                <span className='text-#63C5DA'>Operation System</span>
+                <span className='text-[#E9D676]'>Operation System</span>
                 <div className="flex flex-row gap-2">
                     <SkillsIcon src={windows} alt="windows" label="Windows" style={{ "--delay": "100ms" }} />
                     <SkillsIcon src={linux} alt="linux" label="Linux" style={{ "--delay": "200ms" }} />
@@ -125,7 +125,7 @@ const SkillsContent = () => {
             </div>
 
             <div className='flex flex-col gap-2'>
-                <span className='text-#63C5DA'>UI/UX Design Tools</span>
+                <span className='text-[#E9D676]'>UI/UX Design Tools</span>
                 <div className="flex flex-row gap-2">
                     <SkillsIcon src={canva} alt="canva" label="Canva" style={{ "--delay": "100ms" }} />
                     <SkillsIcon src={figma} alt="figma" label="Figma" style={{ "--delay": "200ms" }} />
@@ -133,7 +133,7 @@ const SkillsContent = () => {
             </div>
 
             <div className='flex flex-col gap-2'>
-                <span className='text-#63C5DA'>Office Productivity</span>
+                <span className='text-[#E9D676]'>Office Productivity</span>
                 <div className="flex flex-row gap-2">
                     <SkillsIcon src={msoffice} alt="msoffice" label="Microsoft Office Suite" style={{ "--delay": "100ms" }} />
                     <SkillsIcon src={gworkspace} alt="gworkspace" label="Google Workspace" style={{ "--delay": "200ms" }} />

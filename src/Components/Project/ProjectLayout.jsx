@@ -21,7 +21,7 @@ const ProjectLayout = () => {
 
             <div className='flex flex-col w-4/5 lg:w-3/5 gap-5'>
 
-                <span className='text-3xl sm:text-4xl md:text-5xl font-bold hidden-animate-fade'>{title}</span>
+                <span className='text-3xl sm:text-4xl md:text-5xl text-[#E9D676] font-bold hidden-animate-fade'>{title}</span>
 
                 <span className='text-sm sm:text-base md:text-lg text-justify hidden-animate-fade'>
                     {description}

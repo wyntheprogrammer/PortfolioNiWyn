@@ -29,7 +29,7 @@ const AccomBox = ({ src, alt, title, description, images, style }) => {
         <img src={src} alt={alt} className='w-full' />
       </div>
 
-      <span className='text-xl sm:text-2xl text-[#63C5DA]'>
+      <span className='text-xl sm:text-2xl text-[#E9D676]'>
         {title}
       </span>
 
@@ -47,7 +47,7 @@ const AccomBox = ({ src, alt, title, description, images, style }) => {
 
       <button
         onClick={handleViewClick}
-        className='w-max hover:text-[#63C5DA] cursor-pointer 
+        className='w-max hover:text-[#E9D676] cursor-pointer 
                hover:scale-110 transition-transform duration-300 text-sm sm:text-base'
       >
         View

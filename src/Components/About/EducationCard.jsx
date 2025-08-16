@@ -20,7 +20,7 @@ const EducationCard = ({ src, alt, school, location, course, major, year, style 
       <div className='flex flex-col gap-2 w-[calc(100%-6rem)]'>
 
         <div className="flex flex-col md:flex-row justify-between">
-          <span className='text-sm sm:text-base md:text-lg text-[#63C5DA]'>{school}</span>
+          <span className='text-sm sm:text-base md:text-lg text-[#E9D676]'>{school}</span>
           <span className='text-xs sm:text-sm md:text-base'>{location}</span>
         </div>
 

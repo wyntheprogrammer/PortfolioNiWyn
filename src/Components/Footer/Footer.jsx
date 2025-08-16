@@ -1,12 +1,12 @@
 import React from 'react'
 import mlMap from '../../assets/ml-map2.png'
-import shLogo from '../../assets/sh-logo.png'
-import facebook from '../../assets/facebook.png'
-import linkedin from '../../assets/linkedin.png'
-import github from '../../assets/github.png'
-import phone from '../../assets/phone.png'
-import email from '../../assets/email.png'
-import location from '../../assets/location.png'
+import wynLogo from '../../assets/wyn-logo.png'
+import facebook from '../../assets/facebook-yellow.png'
+import linkedin from '../../assets/linkedin-yellow.png'
+import github from '../../assets/github-yellow.png'
+import phone from '../../assets/phone-yellow.png'
+import email from '../../assets/email-yellow.png'
+import location from '../../assets/location-yellow.png'
 
 
 const Footer = () => {
@@ -17,7 +17,7 @@ const Footer = () => {
 
                 <div className='flex flex-col w-full xl:w-5/12 gap-4 hidden-animate-fade'>
                     <div className="h-20 flex flex-row text-3xl font-bold gap-2 items-center md:justify-start justify-center w-full">
-                        <img src={shLogo} alt="Logo" className="h-full object-contain" />
+                        <img src={wynLogo} alt="Logo" className="h-full object-contain" />
                         <span>Portfolio ni Wyn</span>
                     </div>
                     <span className='w-full text-center md:text-start'>Welcome to Wyn's world of creativity — where ideas come to life. It may not be as perfect as others, but I'm always willing to learn, adapt, and grow through feedback and criticism.</span>

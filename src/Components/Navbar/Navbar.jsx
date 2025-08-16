@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import ShLogo from '../../assets/sh-logo.png'
+import WynLogo from '../../assets/wyn-logo.png'
 
 import { useNavigate } from 'react-router-dom';
 
@@ -28,7 +28,7 @@ const Navbar = ({ onScrollTo, togglePlay, isPlaying }) => {
 
       <div className="h-full w-auto">
         <img
-          src={ShLogo}
+          src={WynLogo}
           alt="Logo"
           className="h-full object-contain cursor-pointer"
           onClick={handleLogoClick}

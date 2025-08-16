@@ -20,7 +20,7 @@ const Hero = () => {
                 <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white hidden-animate-swipe">
                     Hi, I'm John Bacolod
                 </span>
-                <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#63C5DA] hidden-animate-swipe">
+                <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#E9D676] hidden-animate-swipe">
                     Web Developer
                 </span>
             </div>

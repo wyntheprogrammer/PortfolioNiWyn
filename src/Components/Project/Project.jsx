@@ -145,7 +145,7 @@ const Project = () => {
             </div>
 
 
-            <button className='rounded-sm border border-[#3b82f6] w-max py-2 px-10 font-bold cursor-pointer hover:scale-110 transition-transform duration-300 hidden-animate-fade' onClick={() => navigate('projmore')}>View more</button>
+            <button className='rounded-sm border border-[#E9D676] w-max py-2 px-10 font-bold cursor-pointer hover:scale-110 transition-transform duration-300 hidden-animate-fade' onClick={() => navigate('projmore')}>View more</button>
 
         </div>
 

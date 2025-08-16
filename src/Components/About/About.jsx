@@ -37,7 +37,7 @@ const About = () => {
                 <ul className="flex flex-row gap-4 sm:gap-8 justify-center sm:justify-start text-white hidden-animate-fade mt-4 sm:mt-2">
                     <li
                         className={`border-b-2 text-base sm:text-xl cursor-pointer 
-        ${selectedTab === 'skills' ? 'border-[#63C5DA]' : 'border-transparent'}`}
+        ${selectedTab === 'skills' ? 'border-[#E9D676]' : 'border-transparent'}`}
                         onClick={() => setSelectedTab('skills')}
                     >
                         Skills
@@ -45,7 +45,7 @@ const About = () => {
                     <li className="text-base sm:text-xl">|</li>
                     <li
                         className={`text-base sm:text-xl cursor-pointer 
-        ${selectedTab === 'education' ? 'border-b-2 border-[#63C5DA]' : 'border-transparent'}`}
+        ${selectedTab === 'education' ? 'border-b-2 border-[#E9D676]' : 'border-transparent'}`}
                         onClick={() => setSelectedTab('education')}
                     >
                         Education

@@ -9,8 +9,8 @@ import "leaflet/dist/leaflet.css";
 const { BaseLayer } = LayersControl;
 
 
-import email from '../../assets/email.png';
-import phone from '../../assets/phone.png';
+import email from '../../assets/email-yellow.png';
+import phone from '../../assets/phone-yellow.png';
 
 
 import emailjs from '@emailjs/browser';
@@ -154,7 +154,7 @@ const Contact = () => {
                                 name="name"
                                 id="name"
                                 placeholder="Enter your name"
-                                className="w-full px-4 py-2 border rounded-md border-gray-600 bg-gray-600 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full px-4 py-2 border rounded-md border-gray-600 bg-gray-600 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-[#E9D676]"
                             />
                         </div>
 
@@ -167,7 +167,7 @@ const Contact = () => {
                                 name="email"
                                 id="email"
                                 placeholder="Enter your email"
-                                className="w-full px-4 py-2 border rounded-md border-gray-600 bg-gray-600 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full px-4 py-2 border rounded-md border-gray-600 bg-gray-600 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-[#E9D676]"
                             />
                         </div>
 
@@ -180,13 +180,13 @@ const Contact = () => {
                                 name='message'
                                 rows="4"
                                 placeholder="Write your message here..."
-                                className="w-full px-4 py-2 border rounded-md border-gray-600 bg-gray-600 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                                className="w-full px-4 py-2 border rounded-md border-gray-600 bg-gray-600 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-[#E9D676] resize-none"
                             ></textarea>
                         </div>
 
                         <button
                             type="submit"
-                            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-300"
+                            className="w-full bg-[#A3871D] text-white py-2 rounded-md hover:bg-[#E9D676] transition duration-300"
                         >
                             Submit
                         </button>

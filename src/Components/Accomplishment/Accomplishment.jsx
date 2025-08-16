@@ -44,7 +44,7 @@ import imgd1 from '../../assets/Accomplishment/Diploma/1.jpg';
 import imgd2 from '../../assets/Accomplishment/Diploma/2.jpg';
 import imgd3 from '../../assets/Accomplishment/Diploma/3.jpg';
 import imgd4 from '../../assets/Accomplishment/Diploma/4.jpg';
-
+import imgd5 from '../../assets/Accomplishment/Diploma/5.jpg';
 
 import imgoc1 from '../../assets/Accomplishment/Online Certificates/1.jpg';
 import imgoc2 from '../../assets/Accomplishment/Online Certificates/2.png';
@@ -122,6 +122,7 @@ const Accomplishment = () => {
                     alt="School Diploma"
                     description="My diplomas represent the formal completion of key academic milestones throughout my educational journey. They serve as official proof of my graduation from various levels of study, reflecting my dedication, perseverance, and ability to meet academic standards. These diplomas highlight the foundation of my professional and personal growth, built through years of focused learning and achievement."
                     images={[
+                        imgd5,
                         imgd4,
                         imgd3,
                         imgd2,
