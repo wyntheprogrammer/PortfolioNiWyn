@@ -23,13 +23,21 @@ const Footer = () => {
                     <span className='w-full text-center md:text-start'>Welcome to Wyn's world of creativity — where ideas come to life. It may not be as perfect as others, but I'm always willing to learn, adapt, and grow through feedback and criticism.</span>
                     <div className="flex flex-row gap-2 mt-1 md:justify-start justify-center w-full">
                         <div className="w-8 h-8">
-                            <img src={facebook} alt="Facebook" className='w-full h-full' />
+                            <a href="https://www.facebook.com/wynbacolod/" target="_blank" rel="noopener noreferrer">
+                                <img src={facebook} alt="Facebook" className="w-full h-full cursor-pointer" />
+                            </a>
                         </div>
+
                         <div className="w-8 h-8">
-                            <img src={github} alt="GitHub" className='w-full h-full' />
+                            <a href="https://github.com/wyntheprogrammer" target="_blank" rel="noopener noreferrer">
+                                <img src={github} alt="GitHub" className="w-full h-full cursor-pointer" />
+                            </a>
                         </div>
+
                         <div className="w-8 h-8">
-                            <img src={linkedin} alt="LinkedIn" className='w-full h-full' />
+                            <a href="https://www.linkedin.com/in/jlemuellbacolod/" target="_blank" rel="noopener noreferrer">
+                                <img src={linkedin} alt="LinkedIn" className="w-full h-full cursor-pointer" />
+                            </a>
                         </div>
                     </div>
 

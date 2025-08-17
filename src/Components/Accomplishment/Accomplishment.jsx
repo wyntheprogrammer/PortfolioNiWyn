@@ -39,7 +39,6 @@ import imgsc30 from '../../assets/Accomplishment/School Certificates/30.jpg';
 import imgsc31 from '../../assets/Accomplishment/School Certificates/31.jpg';
 import imgsc32 from '../../assets/Accomplishment/School Certificates/32.jpg';
 
-
 import imgd1 from '../../assets/Accomplishment/Diploma/1.jpg';
 import imgd2 from '../../assets/Accomplishment/Diploma/2.jpg';
 import imgd3 from '../../assets/Accomplishment/Diploma/3.jpg';
